@@ -16,10 +16,14 @@
         }
        }
 
-    
+    estaVivo(){
+return this.vida > 0
+}
+mostrarStatus(){
+console.log(this.nome + " | Vida: " + this.vida)
+}
     
    }
-
 
    const druida = new Personagem ("Kode", 80, 25)
 
@@ -46,4 +50,6 @@ console.log(assasino.vida)
 console.log(atirador.vida)
 console.log(cavaleiro.vida)
 console.log(mago.vida)
-   
+   console.log(mago.mostrarStatus())
+
+
