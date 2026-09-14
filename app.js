@@ -62,21 +62,30 @@ const assasino = new Personagem("Darius", 70, 35, 10)
 const atirador = new Personagem("Lyra", 60, 30, 6)
 const cavaleiro = new Personagem("Zephyr", 50, 50, 9)
 
-guerreiro.causaDano(mago)
-arqueiro.causaDano(mago)
-guerreiro.causaDano(mago)
-assasino.causaDano(atirador)
-atirador.causaDano(cavaleiro)
-cavaleiro.causaDano(assasino)
-mago.curar(15)
-mago.curar(20)
-guerreiro.golpePesado(mago)
-arqueiro.tiroPreciso(guerreiro)
-mago.bolaDeFogo(arqueiro)
+const personagens= {
+  druida,
+  guerreiro,
+  mago,
+  arqueiro,
+  assasino,
+  atirador,
+  cavaleiro,
+}
 
+personagens.forEach(function(personagem){
+  personagem.mostrarStatus()
+})
 
-console.log(assasino.vida)
-console.log(atirador.vida)
-console.log(cavaleiro.vida)
-console.log(mago.vida)
-mago.mostrarStatus()
+let turno = 1
+let jogadorAtual = 0
+
+function proximoTurno(){
+  turno = + 1
+  jogadorAtual = jogadorAtual === 0 ? 1 : 0
+}
+
+proximoTurno()
+proximoTurno()
+
+console.log(turno)
+console.log(jogadorAtual)
